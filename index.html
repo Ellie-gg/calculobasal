@@ -3,41 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Calculadora BMR</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
         body {
             font-family: Arial, sans-serif;
             font-size: 16px;
+            background-color: #f9f9f9;
         }
+
         h1, h2 {
             text-align: center;
         }
+
         form {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 0 auto;
             max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        label, input, select {
-            margin: 5px;
-            width: 100%;
-            max-width: 400px;
-        }
-        button {
-            margin-top: 10px;
-            width: 100%;
-            max-width: 400px;
-        }
-        #result, #totalResult {
-            margin-top: 20px;
-            text-align: center;
-        }
+
+        /* Estilos adicionais aqui */
+
     </style>
 </head>
 <body>
@@ -45,20 +35,18 @@
     <h2>Total de calorias gastas para manter as funções vitais, como os batimentos cardíacos, a pressão arterial e a temperatura corporal</h2>
     <form>
         <label for="gender">Sexo:</label>
-        <div>
-            <input type="radio" name="gender" id="male" value="male">
-            <label for="male">Masculino</label>
-        </div>
-        <div>
-            <input type="radio" name="gender" id="female" value="female">
-            <label for="female">Feminino</label>
-        </div>
+        <input type="radio" name="gender" value="male"> Masculino
+        <input type="radio" name="gender" value="female"> Feminino
+        <br><br>
         <label for="age">Idade:</label>
         <input type="number" name="age" id="age">
+        <br><br>
         <label for="height">Altura (cm):</label>
         <input type="number" name="height" id="height">
+        <br><br>
         <label for="weight">Peso (kg):</label>
         <input type="number" name="weight" id="weight">
+        <br><br>
         <label for="activity">Nível de atividade:</label>
         <select name="activity" id="activity">
             <option value="1.2">Sedentário (pouco ou nenhum exercício)</option>
@@ -67,11 +55,12 @@
             <option value="1.725">Muito ativo (exercício pesado 6-7 dias/semana)</option>
             <option value="1.9">Extremamente ativo (exercício pesado diariamente, ou 2 vezes por dia)</option>
         </select>
+        <br><br>
         <button type="button" onclick="calculateBMR()">Calcular</button>
     </form>
+    <br>
     <div id="result"></div>
     <div id="totalResult"></div>
     <script src="app.js"></script>
 </body>
 </html>
-
